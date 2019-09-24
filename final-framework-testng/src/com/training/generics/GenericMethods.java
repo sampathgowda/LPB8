@@ -18,6 +18,7 @@ public class GenericMethods {
 	
 	public GenericMethods(WebDriver driver){
 		this.driver = driver;
+		
 	}
 	
 	/**
@@ -42,6 +43,11 @@ public class GenericMethods {
 		}else if(type.equals("xpath")){
 			element = driver.findElement(By.xpath(locator));
 		}
+		else if(type.equals("linkText")){
+			element = driver.findElement(By.linkText(locator));
+		}
+			
+		
 		if(checkSingleEntry(locator, type)){
 			System.out.println("Element Found and Returned");
 			return element;
